@@ -27,17 +27,21 @@ public class ConversorSimples extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bgpOpicoes = new javax.swing.ButtonGroup();
         rbt = new javax.swing.JPanel();
         lblTemp = new javax.swing.JLabel();
         txtNum = new javax.swing.JTextField();
         lblResultado = new javax.swing.JLabel();
         btnConverter = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        rbtCelFar = new javax.swing.JRadioButton();
+        rbtFarCel = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Convertor De Temperatura");
 
-        lblTemp.setText("Temperatura em C°");
+        lblTemp.setText("Temperatura:");
 
         txtNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,6 +49,8 @@ public class ConversorSimples extends javax.swing.JFrame {
             }
         });
 
+        lblResultado.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(102, 102, 255));
         lblResultado.setText("Resultado:");
 
         btnConverter.setText("Converter");
@@ -60,6 +66,41 @@ public class ConversorSimples extends javax.swing.JFrame {
                 btnLimparActionPerformed(evt);
             }
         });
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Opções"));
+
+        bgpOpicoes.add(rbtCelFar);
+        rbtCelFar.setSelected(true);
+        rbtCelFar.setText("C° para F°");
+        rbtCelFar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtCelFarActionPerformed(evt);
+            }
+        });
+
+        bgpOpicoes.add(rbtFarCel);
+        rbtFarCel.setText("F° para C°");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbtCelFar)
+                    .addComponent(rbtFarCel))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rbtCelFar)
+                .addGap(18, 18, 18)
+                .addComponent(rbtFarCel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout rbtLayout = new javax.swing.GroupLayout(rbt);
         rbt.setLayout(rbtLayout);
@@ -80,33 +121,44 @@ public class ConversorSimples extends javax.swing.JFrame {
                     .addGroup(rbtLayout.createSequentialGroup()
                         .addGap(154, 154, 154)
                         .addComponent(lblResultado)))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         rbtLayout.setVerticalGroup(
             rbtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rbtLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addGroup(rbtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTemp))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(lblResultado)
-                .addGap(49, 49, 49)
-                .addGroup(rbtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConverter)
-                    .addComponent(btnLimpar))
-                .addGap(87, 87, 87))
+                .addGroup(rbtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rbtLayout.createSequentialGroup()
+                        .addGroup(rbtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTemp))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(lblResultado)
+                        .addGap(49, 49, 49)
+                        .addGroup(rbtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnConverter)
+                            .addComponent(btnLimpar))
+                        .addGap(87, 87, 87))
+                    .addGroup(rbtLayout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rbt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(rbt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rbt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(rbt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,7 +177,12 @@ public class ConversorSimples extends javax.swing.JFrame {
         n = Integer.parseInt(txtNum.getText());
         
         //processamento
-        total = (n * 1.8) + 32; 
+        if(rbtCelFar.isSelected()){          
+            total = (n * 1.8) + 32; 
+        } else {
+            total = ( n - 32 ) / 1.8;
+        };
+
         
         // Saida
         lblResultado.setText(String.valueOf(total));
@@ -139,6 +196,10 @@ public class ConversorSimples extends javax.swing.JFrame {
         lblResultado.setText(null);
         txtNum.requestFocus();
     }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void rbtCelFarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtCelFarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtCelFarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,11 +237,15 @@ public class ConversorSimples extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup bgpOpicoes;
     private javax.swing.JButton btnConverter;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblTemp;
     private javax.swing.JPanel rbt;
+    private javax.swing.JRadioButton rbtCelFar;
+    private javax.swing.JRadioButton rbtFarCel;
     private javax.swing.JTextField txtNum;
     // End of variables declaration//GEN-END:variables
 }
